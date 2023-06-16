@@ -1,0 +1,34 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%; //1rem = 10px
+  scroll-behavior: smooth;
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+
+  @include respond(big-desk) {
+    font-size: 75%;
+  }
+}
+
+body {
+  font-family: "lato", sans-serif;
+  line-height: 1.7;
+  font-weight: 400;
+  padding: 3rem;
+  color: $color-text-dark;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}

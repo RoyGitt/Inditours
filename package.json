@@ -1,0 +1,16 @@
+{
+  "name": "roytours",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "Roy",
+  "license": "ISC",
+  "dependencies": {
+    "node": "^16.4.0",
+    "node-sass": "^6.0.1",
+    "sass": "^1.35.1"
+  }
+}

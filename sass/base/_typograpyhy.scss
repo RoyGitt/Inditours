@@ -1,0 +1,69 @@
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  &--main {
+    display: block;
+    font-size: 6rem;
+    text-align: center;
+    letter-spacing: 3.5rem;
+    font-weight: 400;
+    animation-name: fadeinleft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
+  }
+  &--sub {
+    display: block;
+    color: $color-white;
+    font-size: 1.8rem;
+    letter-spacing: 1.4rem;
+    font-weight: 700;
+    animation-name: fadeinright;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    margin-bottom: 6rem;
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
+  }
+}
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  background-image: linear-gradient(
+    to right,
+    $color-primary,
+    $color-primary-dark
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: transform 0.2s;
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
+  &:hover {
+    transform: scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.1);
+  }
+}
+.heading-tertiary {
+  font-size: $default-font-size;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.2rem;
+}
+.paragraph {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: justify;
+  width: 90%;
+  margin-right: 0;
+  &:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+}

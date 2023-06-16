@@ -1,0 +1,89 @@
+.section-about {
+  background-color: $color-light-grey-1;
+  padding: 30rem 0;
+  margin-top: -20vh;
+  @include respond(tab-port) {
+    padding: 20rem 0;
+    margin-top: -15vh;
+  }
+  @include respond(phone) {
+    margin-top: -8vh;
+    padding: 15rem 0;
+  }
+}
+.section-features {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary, 0.4),
+      rgba($color-primary-dark, 0.4)
+    ),
+    url("/images/nat-4.jpg");
+  background-size: cover;
+  background-position-y: 100%;
+  padding: 10rem 0;
+  transform: skewY(-6deg);
+  margin-top: -10rem;
+  position: relative;
+  & > * {
+    transform: skewY(6deg);
+  }
+}
+.section-cards {
+  padding: 20rem 0;
+  padding-bottom: 10rem;
+  background-color: $color-light-grey-1;
+  margin-top: -10rem;
+}
+
+.section-story {
+  position: relative;
+  padding: 10rem 0;
+}
+.section-form {
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary,
+    $color-primary-dark
+  );
+}
+.book {
+  background-image: linear-gradient(
+      108deg,
+      rgba($color-white, 0.9) 0%,
+      rgba($color-white, 0.9) 50%,
+      transparent 50%
+    ),
+    url("../images/nat-10.jpg");
+  background-size: cover;
+  background-position-y: 50%;
+  height: 65rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+  @include respond(tab-port) {
+    width: 50rem;
+    margin: 0 auto;
+    background-image: linear-gradient(
+        108deg,
+        rgba($color-black, 0.5) 0%,
+        rgba($color-black, 0.5) 100%
+      ),
+      url("../images/nat-10.jpg");
+    background-position-x: 80%;
+  }
+  @include respond(phone) {
+    width: 38rem;
+    background-position-x: 82%;
+  }
+
+  &__form {
+    padding: 8rem;
+    width: 50%;
+    @include respond(tab-land) {
+      padding: 4rem;
+    }
+    @include respond(tab-port) {
+      width: 100%;
+    }
+  }
+}

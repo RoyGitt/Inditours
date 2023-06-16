@@ -1,0 +1,56 @@
+.footer {
+  padding: 5rem 0;
+  background-color: $color-light-grey-3;
+  font-size: 1.8rem;
+  @include respond(tab-land) {
+    font-size: 1.5rem;
+  }
+  &__logo-box {
+    text-align: center;
+  }
+  &__logo {
+    height: 5rem;
+  }
+  &__nav {
+    list-style: none;
+    border-top: 2px solid $color-text-dark;
+    display: inline-block;
+    padding-top: 4rem;
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  &__list-item {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all 0.3s;
+
+    &:hover,
+    &:active {
+      transform: rotate(5deg) scale(1.2);
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.6);
+      color: $color-primary;
+    }
+  }
+  &__copyright {
+    padding-top: 4rem;
+    color: $color-light-grey-2;
+    text-align: center;
+    float: right;
+    backface-visibility: hidden;
+    @include respond(tab-port) {
+      float: none;
+    }
+  }
+}

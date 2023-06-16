@@ -1,0 +1,182 @@
+.card {
+  -moz-perspective: 150rem;
+  perspective: 150rem;
+  height: 55rem;
+  position: relative;
+  @include respond(tab-port) {
+    width: 50rem;
+    margin: 0 auto;
+    height: 70rem;
+  }
+  @include respond(phone) {
+    width: 38rem;
+  }
+
+  &__side {
+    height: 55rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all 0.8s ease;
+    backface-visibility: hidden;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    @include respond(tab-port) {
+      height: 65rem;
+      margin: 0 auto;
+      width: 50rem;
+    }
+
+    @include respond(phone) {
+      width: 38rem;
+    }
+    &--front {
+      background-color: $color-white;
+      box-shadow: 0rem 2rem 4rem rgba($color-black, 0.2);
+      @include respond(tab-port) {
+        box-shadow: 0rem 1rem 2rem rgba($color-black, 0.2);
+      }
+    }
+    &--back {
+      transform: rotateY(180deg);
+      box-shadow: 0rem 2rem 4rem rgba($color-black, 0.2);
+      @include respond(tab-port) {
+        box-shadow: 0rem 1rem 2rem rgba($color-black, 0.2);
+      }
+
+      &-1 {
+        background-image: linear-gradient(
+          to right,
+          $color-primary,
+          $color-primary-dark
+        );
+      }
+      &-2 {
+        background-image: linear-gradient(
+          to right,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+      &-3 {
+        background-image: linear-gradient(
+          to right,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  &__heading {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 400;
+    color: $color-white;
+    text-transform: uppercase;
+    text-align: center;
+
+    &--heading {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+
+      &--1 {
+        background-image: linear-gradient(
+          to right,
+          rgba($color-primary, 0.8),
+          rgba($color-primary-dark, 0.8)
+        );
+        @include respond(tab-port) {
+          top: 40%;
+        }
+      }
+      &--2 {
+        background-image: linear-gradient(
+          to right,
+          rgba($color-secondary-light, 0.8),
+          rgba($color-secondary-dark, 0.8)
+        );
+
+        @include respond(tab-port) {
+          top: 40%;
+        }
+      }
+      &--3 {
+        background-image: linear-gradient(
+          to right,
+          rgba($color-tertiary-light, 0.8),
+          rgba($color-tertiary-dark, 0.8)
+        );
+        @include respond(tab-port) {
+          top: 40%;
+        }
+      }
+    }
+  }
+  &__details {
+    ul {
+      list-style-type: none;
+      padding: 3rem 8rem;
+      width: 100%;
+      margin: 0;
+      @include respond(tab-port) {
+        padding: 8rem 8rem;
+      }
+      li {
+        font-size: $default-font-size;
+        text-align: center;
+        padding: 1rem;
+        display: block;
+        &:not(:last-child) {
+          border-bottom: 1px solid rgba($color-light-grey-2, 0.8);
+        }
+      }
+    }
+  }
+
+  &__image {
+    background-size: cover;
+    height: 25rem;
+    &--pic1 {
+      background-image: url("../images/nat-5.jpg");
+    }
+    &--pic2 {
+      background-image: url("../images/nat-6.jpg");
+    }
+    &--pic3 {
+      background-image: url("../images/nat-7.jpg");
+    }
+  }
+
+  &__cta {
+    color: $color-white;
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+  }
+  &__pricebox {
+    text-align: center;
+    &--only {
+      font-size: 3rem;
+    }
+    &--value {
+      font-size: 8rem;
+      font-weight: 300;
+      margin-bottom: 5rem;
+    }
+  }
+}

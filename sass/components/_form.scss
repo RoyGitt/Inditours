@@ -1,0 +1,111 @@
+.form {
+  width: 100%;
+
+  &__group:not(:last-child) {
+    margin-bottom: 3.5rem;
+    @include respond(tab-land) {
+      margin-bottom: 1.5rem;
+    }
+  }
+  &__input {
+    font-family: inherit;
+    color: inherit;
+    font-size: 2rem;
+    border: none;
+    padding: 1.5rem 2rem;
+    display: block;
+    width: 100%;
+    border-bottom: 3px solid transparent;
+    border-radius: 0.3rem;
+    background-color: rgba($color-white, 0.5);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.05);
+    transition: all 0.4s;
+    &:focus {
+      outline: none;
+      border-bottom: 3px solid $color-primary-dark;
+    }
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+    &::-webkit-input-placeholder {
+      color: rgba($color-primary-dark, 0.7);
+      @include respond(tab-port) {
+        color: $color-white;
+      }
+    }
+  }
+
+  &__label {
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+    font-size: 1.4rem;
+    display: block;
+    font-weight: 700;
+    transition: all 0.3s;
+  }
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+  &__radio-group {
+    width: 49%;
+    display: inline-block;
+    font-size: $default-font-size;
+    position: relative;
+    @include respond(tab-land) {
+      width: 100%;
+      font-size: 2rem;
+      display: block;
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  &__radio-label {
+    padding-left: 3.5rem;
+    @include respond(tab-port) {
+      color: $color-white;
+    }
+  }
+
+  &__radio-button {
+    display: inline-block;
+    width: 3.8rem;
+    height: 3.8rem;
+    border: 0.7rem solid $color-primary-medium;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    @include respond(tab-land) {
+      width: 3.3rem;
+      height: 3.3rem;
+      left: 1rem;
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: $color-primary-medium;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.2s;
+      @include respond(tab-land) {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
+  }
+
+  &__radio-input:checked ~ &__radio-label &__radio-button::after {
+    opacity: 1;
+  }
+  &__radio-input {
+    visibility: hidden;
+  }
+}

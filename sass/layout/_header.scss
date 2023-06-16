@@ -1,0 +1,36 @@
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary, 0.4),
+      rgba($color-primary-dark, 0.4)
+    ),
+    url(../images/hero.jpg);
+  background-size: cover;
+  background-position-y: 100%;
+  background-position-x: 50%;
+  clip-path: polygon(0 0, 100% 0%, 100% 85%, 50% 100%, 0 85%);
+
+  position: relative;
+
+  &__logo-box {
+    position: absolute;
+    left: 3rem;
+    top: 3rem;
+    @include respond(tab-port) {
+      left: 3rem;
+      top: 6rem;
+    }
+  }
+  &__logo {
+    height: 4rem;
+  }
+  &__heading-box {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+  }
+}
